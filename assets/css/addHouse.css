@@ -1,0 +1,428 @@
+@import "color.css";
+
+/* WINDOW_________________________________ */
+.contentAdd {
+    height: 100%;
+    width: 100%;
+    z-index: 40;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000000b7;
+    animation: showOp 0.4s ease-in-out;
+    /* display: none; */
+}
+@keyframes showOp{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+.windowContentAdd {
+    display: grid;
+    grid-template: 45px 75vh 30px / auto;
+    margin-top: 50px;
+    width: 70%;
+    animation: show 0.3s ease-in-out;
+}
+@keyframes show{
+    0%{opacity: 0; transform: scale(0.6) translateY(-100vh);}
+    100%{opacity: 1; transform: scale(1) translateX(0);}
+}
+
+.titleBar{
+    padding: 15px;
+    background: var(--primary);
+    color: white;
+    width: 100%;
+    box-shadow: 0 5px 20px var(--shadow);
+    z-index: 41;
+    border-radius: 6px 6px 0 0;
+}
+ .formContentAdd {
+    display: grid;
+    grid-template: auto auto auto auto / 45% calc(55% - 20px);
+    grid-gap: 20px;
+    color: var(--dark2);
+    background-color: var(--white2);
+    z-index: 40;
+    box-shadow: 0 0 30px var(--shadow);
+    overflow-y: scroll;
+    padding: 20px 25px;
+    position: relative;
+}
+
+.footerBar{
+    padding: 5px;
+    background: var(--dark1);
+    color: white;
+    width: 100%;
+    font-size: 14px;
+    z-index: 41;
+    border-radius: 0 0 6px 6px;
+    text-transform: capitalize;
+}
+
+.hideContentAdd{
+    display: none;
+} 
+
+/* _END WINDOW_______________________________________________ */
+
+.formInput{
+    display: grid;
+    grid-gap: 10px;
+}
+
+.addPicture img{
+    width: 100%;
+    height: 45vh;
+}
+
+
+/* my custom select ______________________________*/
+
+.addSelect{
+	height: fit-content;
+    position: relative;
+}
+
+.addSelect #addSelect_value, #addSelect_value_categories{
+    width: 100%;
+    height: 40px;
+    padding: 0 12px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    outline: none;
+    background: var(--white3);
+    color: #777;
+    border: 2px solid #8080804a;
+}
+.addSelect #addSelect_value i, #addSelect_value_categories i{
+	transition: transform .5s;
+}
+.addSelect #addList_option, #addList_option_categories{
+    width: 100%;
+    background: var(--white);
+    border-radius: 5px;
+    overflow-y: scroll;
+    height: auto;
+    max-height: 200px;
+    border: 8px solid var(--white2);
+    position: absolute;
+    z-index: 1;
+    box-shadow: 0 0 5px var(--shadow);
+    top: 50px;
+    animation: showOp 0.1s ease-in-out;
+}
+.addSelect .options{
+	width: 100%;
+	cursor: pointer;
+	padding: 12px 0 12px 40px;
+	position: relative;
+	overflow: hidden;
+    border-radius: 4px;
+}
+.addSelect .options:hover{
+	background: var(--hover);
+}
+.addSelect .options i{
+	width: 25px;
+	position: absolute;
+	top: 12px;
+	left: 12px;	
+	pointer-events: none;
+}
+.addSelect .options p{
+	pointer-events: none;
+}
+.hide{
+	display: none;
+}
+.rotate{
+	transform: rotate(180deg)!important;
+}
+
+/*______________END__________________*/
+
+#checkStatue {
+    display: grid;
+    grid-template: 62px 22px / repeat(3, 1fr);
+    margin: 16px 0;
+}
+#checkStatue input {
+    display: none;
+}
+#checkStatue label {
+    color: black;
+    height: 60px;
+    background: #0881c0;
+    border-radius: 4px;
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+#checkStatue label:after {
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background-color: var(--success);
+    top: -8px;
+    right: -8px;
+    border-radius: 50%;
+    border: 4px solid white;
+    display: none;
+}
+#checkStatue label:after {
+    content: "";
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    background-color: var(--success);
+    top: -16px;
+    right: -12px;
+    border-radius: 50%;
+    border: 4px solid white;
+    display: none;
+}
+#electricity:checked + label:after {
+    display: block;
+}
+#water:checked + label:after {
+    display: block;
+}
+#statue:checked + label:after {
+    display: block;
+}
+
+#checkStatue label:first-child {
+   margin-left: 0;
+   margin-right: 20px;
+}
+#checkStatue label:nth-child(5) {
+   margin-right: 0;
+   margin-left: 20px;
+}
+#checkStatue label img {
+   filter: invert(1);
+   pointer-events: none;
+}
+#checkStatue span {
+   color: #a29fc7;
+}
+#checkStatue span:nth-child(7) {
+    padding-left: 2px;
+
+}
+#checkStatue span:nth-child(8) {
+    display: flex;
+    justify-content: center;
+}
+#checkStatue span:last-child {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 2px;
+}
+
+/* .checked {
+    box-shadow: 0 0 6px var(--success);
+} */
+
+#addPrice, #street{
+    border: none;
+    border-radius: 4px;
+    height: 40px;
+    width: 100%;
+    outline: none;
+    background: var(--white3);
+    color: #777;
+    border: 2px solid #8080804a;
+    line-height: 50px;
+    padding: 0 20px;
+    font-size: 16px;
+    position: relative;
+}
+.spanPrice{
+    position: relative;
+}
+/* .spanPrice label, .spanStreet label{
+    margin: 5px 0;
+} */
+.spanPrice::after{
+    content: "FCFA";
+    position: absolute;
+    height: 40px;
+    width: 100px;
+    background: var(--success);
+    color: white;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 4px 4px 0;
+}
+
+.morePicture{
+    grid-column: span 2;
+    height: fit-content;
+    padding: 6px;
+    display: grid;
+    grid-template: auto / repeat(3, 1fr);
+    grid-gap: 10px;
+    background: var(--white3);
+    border: 2px solid #8080801f;
+}
+.morePicture label{
+    width: 100%;
+    max-height: 130px;
+    min-height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed #c2cdda;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+.morePicture label img{
+    height: 100%;
+    width: inherit;
+    position: absolute;
+}
+.morePicture label i{
+    font-size: 50px;
+}
+.morePicture input{
+    display: none;
+}
+#preview2{
+    width: inherit;
+    position: absolute;
+}
+
+#description{
+    grid-column: span 2;
+    outline: none;
+    background: var(--white3);
+    color: #777;
+    border: 2px solid #8080804a;
+    padding: 10px;
+    font-size: 16px;
+    max-width: 100%;
+    min-width: 100%;
+    max-height: 150px;
+    min-height: 150px;
+}
+#btnAddHouse{
+    height: 40px;
+    border: none;
+    grid-column-start: 2;
+    background: var(--success);
+    color: white;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    min-height: 40px;
+}
+.space{
+    height: 2px;
+}
+
+@media screen and (max-width: 900px){
+    .windowContentAdd{
+        width: 85%;
+    }
+}
+@media screen and (max-width: 700px){
+    .formContentAdd{
+        display: flex;
+        flex-direction: column;
+    }
+    .morePicture{
+        display: flex;
+        flex-direction: column;
+    }
+    .morePicture label {
+        min-height: 50vw;
+    }
+    
+}
+@media screen and (max-width: 500px){
+    /* .addSelect #addSelect_value, #addSelect_value_categories {
+        width: 80vh;
+    } */
+    .morePicture label img {
+        height: 100%;
+        width: auto;
+        position: absolute;
+    }
+    .formContentAdd{
+        height: calc(100vh - 80px);
+        width: 100%;
+    }
+    .windowContentAdd {
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+    }
+    .titleBar{
+        border-radius: 0;
+    }
+    .footerBar{
+        display: none;
+    }
+}
+@media screen and (max-width: 300px){
+    #preview2{
+        width: auto;
+        height: inherit;
+        position: absolute;
+    }
+    .spanPrice::after {
+        width: 40px;
+        font-size: 14px;
+    }
+    #checkStatue {
+        display: grid;
+        grid-template: auto / 1fr;
+        margin: 16px 0;
+    }
+    #checkStatue label {
+        margin: 0 10px;
+    }
+    #checkStatue label:first-child {
+       margin-left: 10px;
+       margin-right: 10px;
+    }
+    #checkStatue label:nth-child(5) {
+       margin-right: 10px;
+       margin-left: 10px;
+    }
+    #checkStatue span {
+       color: #a29fc7;
+    }
+    #checkStatue span:nth-child(7) {
+        padding-left: 0;
+        display: flex;
+        justify-content: center;
+        grid-row-start: 2;
+    
+    }
+    #checkStatue span:nth-child(8) {
+        display: flex;
+        justify-content: center;
+        grid-row-start: 4;
+    }
+    #checkStatue span:last-child {
+        display: flex;
+        justify-content: center;
+        padding-right: 0;
+    }
+}

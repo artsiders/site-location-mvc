@@ -1,0 +1,114 @@
+@import "color.css";
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.footer_one{
+    /* position: absolute; */
+    width: 100%;
+    /* bottom: -1000; */
+    grid-column: span 2;
+    border: 2px solid #ffffff24;
+    border-radius: 6px;
+}
+.icon_social{
+    background-color: var(--primary);
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 65px;
+    border-radius: 6px 6px 0 0;
+}
+.icon_social i{
+    margin: 0 10px;
+    padding: 8px;
+    border-radius: 50%;
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    height: 35px;
+}
+.icon_social .fa-facebook{
+    background-color: rgb(12, 56, 202);
+}
+.icon_social .fa-youtube{
+    background-color: rgb(255, 0, 0);
+}
+.icon_social .fa-envelope{
+    background-color: rgb(255, 0, 76);
+}
+.icon_social .fa-github{
+    background-color: rgb(31, 31, 31);
+}
+.icon_social .fa-instagram{
+    background-color: rgb(0, 225, 255);
+}
+/* hover */
+.icon_social .fa-facebook:hover{
+    background-color: black;
+    transition-duration: .2s;
+    transform: scale(1.6);
+}
+.icon_social .fa-youtube:hover{
+    background-color: black;
+    transition-duration: .2s;
+    transform: scale(1.6);
+}
+.icon_social .fa-envelope:hover{
+    background-color: black;
+    transition-duration: .2s;
+    transform: scale(1.6);
+}
+.icon_social .fa-github:hover{
+    background-color: rgb(81, 0, 255);
+    transition-duration: .2s;
+    transform: scale(1.6);
+}
+.icon_social .fa-instagram:hover{
+    background-color: black;
+    transition-duration: .2s;
+    transform: scale(1.6);
+}
+.copyright{
+    background-color: var(--dark1);
+    color: rgb(131, 131, 131);
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 900px){
+    .footer_one{
+       width: 90%;
+       margin-left: 70px;
+    }
+}
+@media screen and (max-width: 700px){
+    .footer_one{
+       width: 88%;
+    }
+}
+@media screen and (max-width: 500px){
+    .footer_one{
+        width: 100%;
+        margin: 0 0 60px 0;
+    }
+}
+@media screen and (max-width: 300px){
+    .icon_social i{
+        margin: 0 2%;
+        padding: 1%;
+        width: 32px;
+        font-size: 18px;
+        height: 32px;
+    }
+    .copyright{
+        font-size: 12px;
+    }
+}

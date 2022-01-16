@@ -1,0 +1,304 @@
+@import "color.css";
+@import "scrollBar.css";
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 104vh;
+    font-family: sans-serif;
+    background: var(--primary);
+}
+.contentForm{
+    display: grid;
+    grid-template: auto / 60% 40%;
+    width: 70%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+.contentForm form{
+    display: grid;
+    grid-template: auto / 1fr 1fr;
+    grid-gap: 20px;
+    padding: 10px;
+    background-color: white;
+}
+.contentForm label{
+    font-size: 16px;
+    color: #555;
+    text-transform: capitalize;
+    position: relative;
+}
+#firstName, #lastName, #email, #pass, #tel{
+    border: none;
+    border-radius: 4px;
+    height: 40px;
+    display: block;
+    width: calc(100% - 40px);
+    outline: none;
+    background: #fafafa;
+    color: #777;
+    -webkit-box-shadow: inset 0px 1px 3px 0px rgb(0 0 0 / 8%);
+    -moz-box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+    box-shadow: inset 0px 1px 3px 0px rgb(0 0 0 / 8%);
+    line-height: 50px;
+    padding: 0 20px;
+    font-size: 16px;
+    margin-top: 5px;
+    position: relative;
+}
+#pass::before {
+    content: "";
+    height: 20px;
+    width: 20px;
+    border-radius: 5px;
+    background: #dedede;
+    position: absolute;
+    margin-left: 58px;
+}
+.sexBox{
+    background: #e8e8e8;
+    padding: 10px;
+    min-height: 46px;
+    max-height: 46px;
+    border-radius: 4px;
+}
+.sexBox span{
+    display: flex;
+    justify-content: flex-start;
+}
+.sexBox label{
+    margin-top: 8px;
+    margin-right: 40px;
+}
+#man, #woman{
+    display: none;
+}
+.sexBox label::before {
+    content: "";
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: 1px solid #bfbfbf;
+    background: #ffffff;
+    position: absolute;
+    margin-left: 58px;
+}
+.sexBox .check::after {
+    content: "";
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background: var(--primary);
+    position: absolute;
+    bottom: 2px;
+    margin-left: 6.6px;
+}
+/* __________________________________________ */
+#man:checked{
+    background-color: lime;
+}
+#woman:checked{
+    background-color: lime;
+}
+/* _______________________________ */
+.formCity .select{
+    position: relative;
+}
+.formCity form{
+    display: flex;
+    justify-content: flex-end;
+    margin: 13px 40px 13px 0;
+}
+.formCity .select #select_value{
+    height: 40px;
+    padding: 0 12px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    margin: 10px 0;
+
+    background: #fafafa;
+    color: #777;
+    -webkit-box-shadow: inset 0px 1px 3px 0px rgb(0 0 0 / 8%);
+    -moz-box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+    box-shadow: inset 0px 1px 3px 0px rgb(0 0 0 / 8%);
+    line-height: 50px;
+    padding: 0 20px;
+    font-size: 16px;
+}
+.formCity .select #select_value i{
+    transition: transform .5s;
+}
+.formCity .select #list_option{
+    width: 100%;
+    background: #ffffff;
+    border-radius: 5px;
+    position: absolute;
+    overflow-y: scroll;
+    border: 2px solid #d4d4d4;
+    border-right: 0px;
+    overflow-x: hidden;
+    height: 150px;
+}
+.options{
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+}
+.options:hover{
+    background: var(--hover);
+}
+.options i{
+    width: 25px;
+    position: absolute;
+    display: block;
+    top: 12px;
+    left: 12px;	
+    pointer-events: none;
+}
+.options p{
+    pointer-events: none;
+    display: block;
+    padding-left: 50px;
+}
+.hide{
+    /* visibility: hidden; */
+    display: none;
+}
+.rotate{
+    transform: rotate(180deg)!important;
+}
+
+
+/* ___________________ */
+
+#register, .BtnturnToLogin{
+    border: none;
+    width: 100%;
+    height: 40px;
+    border-radius: 4px;
+    background: var(--primary);
+    color: white;
+    font-size: 20px;
+    margin-top: 27px;
+}
+#register:hover{
+    background: #57b5ff;
+}
+#register:active{
+    background: #002b4d;
+    
+}
+
+.BtnturnToLogin{
+    border: 2px solid #eaeaea;
+    width: calc(100% - 3px);
+    margin: 0;
+    height: 30px;
+    border-radius: 4px;
+    color: #756868;
+    font-size: 16px;
+    background: transparent;
+    display: flex;
+    grid-column: span 2;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition-duration: .1s;
+}
+.BtnturnToLogin:hover{
+    background-color: var(--hover);
+    border-color: var(--hover);
+    transition-duration: .1s;
+}
+
+.imageForm{
+    background-image: url(../images/design_form.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+}
+
+.content_bulle {
+    bottom: 16px;
+    right: 16px;
+}
+.content_bulle #bulle{
+    background-color: var(--secondary);
+}
+
+.inputError{
+    box-shadow:  0 0 3px #ffa3a3!important;
+}
+.inputSuccess{
+    box-shadow:  0 0 3px #a3ffba!important;
+}
+
+@media screen and (max-width: 900px){
+    .contentForm{
+        width: 90%;
+    }
+}
+@media screen and (max-width: 700px){
+    body{
+        height: 1000px;
+    }
+    .imageForm{
+        background-image: url(../images/EmptyStoryCover.png);
+        grid-row-start: 1;
+    }
+    .contentForm{
+        width: 100%;
+        height: 100%;
+        grid-template: auto auto / auto;
+        border-radius: 0;
+    }
+    .contentForm form {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    #register{
+        margin: 10px 0;
+    }
+    .contentForm form {
+        padding: 0 100px;
+    }
+    .sexBox {
+        margin: 10px 0;
+    }
+    
+}
+@media screen and (max-width: 500px){
+    .contentForm {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+    .contentForm form {
+        padding: 0;
+    }
+}
+@media screen and (max-width: 330px){
+    .sexBox{
+        min-height: 80px;
+        max-height: 80px;
+    }
+    .sexBox span {
+        flex-direction: column;
+    }
+    .contentForm {
+        min-width: 192px;
+    }
+    .contentForm form {
+        min-width: 80%;
+    }
+}

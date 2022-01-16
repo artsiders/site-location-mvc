@@ -1,0 +1,132 @@
+@import "color.css";
+@import "scrollBar.css";
+
+body{
+    background-color: var(--limpid-gray);
+}
+.content_home {
+    display: grid;
+    grid-template: auto / 68% 29%;
+    grid-gap: 30px;
+    width: calc(100% - 100px);
+    position: absolute;
+    right: 0;
+    top: 60px;
+    margin: 2%;
+}
+
+.background_cover {
+    background-image: url(../images/modern_house.jpg);
+    background-position: center;
+    background-size: cover;
+    grid-column: span 2;
+    height: 250px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #80808057;
+    color: white;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+    /* position: relative; */
+    align-items: center;
+    font-family: verdana;
+}
+
+.background_cover h1 {
+    font-family: verdana;
+    color: var(--dark2);
+    padding: 0 15px;
+    border-radius: 4px;
+    text-align: center;
+    z-index: 2;
+    display: inline-block;
+    background: var(--hover);
+}
+
+.content_card {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+    border-radius: 4px;
+        
+}
+
+.box_card {
+    background: var(--white);
+    border-radius: 4px;
+    height: fit-content;
+    border: 2px solid #8080801f;
+
+}
+.section_aside img{
+    width: 100%;
+    max-height: 100%;
+}
+.section_aside h1{
+    margin: 14px 0;
+}
+.aside_bar .header_aside, .section_aside, .footer_aside{
+    background: var(--white);
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    border: 2px solid #8080801f;
+}
+.aside_bar .header_aside{
+    background: var(--primary);
+    color: white;
+}
+.aside_bar .section_aside{
+    height: fit-content;
+}
+.aside_bar .footer_aside{
+    background: var(--primary);
+    color: white;
+}
+@media screen and (max-width: 900px) {
+
+    .background_cover {
+        height: 200px;
+        justify-content: center;
+        margin: 0 0 0 60px;
+        border-radius: 0;
+    }
+    .content_home {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        margin: 0;
+    }
+
+    .aside_bar {
+        /* display: none; */
+        width: 90%;
+        margin-left: 70px;
+    }
+}
+@media screen and (max-width: 700px) {
+    .aside_bar {
+        width: 88%;
+    }
+}
+@media screen and (max-width: 600px) {
+    .aside_bar {
+        width: 85%;
+    }
+}
+@media screen and (max-width: 500px) {
+    .background_cover {
+        margin: 0;
+    }
+    .box_card {
+        margin-top: -30px;
+    }
+    .aside_bar {
+        /* display: none; */
+        margin: 30px 3% 70px 3%;
+        width: 94%;
+    }
+}

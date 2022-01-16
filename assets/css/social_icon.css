@@ -1,0 +1,214 @@
+@import "color.css";
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: verdana;
+}
+::selection{
+	background-color: rgba(39, 39, 39, 0.555);
+}
+body{
+	font-family: Verdana, sans-serif;
+}
+#social_icon{
+	background-color: var(--white3);
+    display: flex;
+    flex-direction: column;
+    width: 60px;
+    border-radius: 4px 0 0 4px;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(49, 49, 49, 0.246);
+    position: fixed;
+    z-index: 150;
+    right: 0;
+    top: 250px;
+    transition: .25s linear;
+}
+#facebook{
+	background-image: url(../images/Facebook.ico);
+    background-size: 60%;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 100%;
+    height: 60px;
+	transition: .07s ease-in-out;
+	cursor: pointer;
+	position: relative;
+}
+#youtube{
+	background-image: url(../images/YouTube.ico);
+	background-size: 55%;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 100%;
+    height: 60px;
+	transition: .07s ease-in-out;
+	cursor: pointer;
+}
+#whatsapp{
+	background-image: url(../images/Whatsapp.ico);
+	background-size: 55%;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 100%;
+    height: 60px;
+	transition: .07s ease-in-out;
+	cursor: pointer;
+	position: relative;
+	z-index: 10;
+}
+#gMail{
+	background-image: url(../images/Gmail.ico);
+	background-size: 55%;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 100%;
+    height: 60px;
+	transition: .07s ease-in-out;
+	cursor: pointer;
+	position: relative;
+}
+#gMail a{
+	width: inherit;
+    height: inherit;
+    position: absolute;
+    background: transparent;
+}
+#facebook:hover, #youtube:hover, #whatsapp:hover, #gMail:hover{
+	background-color: var(--hover);
+	transition: .07s ease-in-out;
+	cursor: pointer;
+}
+#drop_whatsapp_number{
+	background-color: var(--primary);
+    width: 225px;
+    height: 60px;
+    box-shadow: 0 0 10px rgba(117, 117, 117, 0.417);
+    position: absolute;
+    z-index: -1;
+	color: white;
+	top: 120;
+    right: 90px;
+    align-items: center;
+    transition: .5s ease-in-out;
+    z-index: 8;
+	justify-content: center;
+	display: none;
+	cursor: text;
+}
+#drop_whatsapp_number i {
+	opacity: 0;
+	margin: 5px;
+	cursor: pointer;
+    background: white;
+    padding: 10px;
+    color: rgba(0, 0, 0, 0.849);
+    border-radius: 50%;
+}
+#drop_whatsapp_number span {
+	display: grid;
+	opacity: 0;
+    grid-template-columns: 45px calc(100% - 45px);
+	grid-template-rows: 45px;
+	transition: .25s linear;
+}
+#drop_whatsapp_number textarea { 
+	position: absolute;
+    z-index: -2;
+    width: 0;
+    height: 0;
+}
+
+#drop_whatsapp_number em {
+    text-align: center;
+    color: white;
+	padding-top: 10px;
+	min-width: 154px;
+}
+#drop_whatsapp_number::after{
+	content: "";
+    background-color: transparent;
+    border-top: 10px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 20px solid var(--primary);
+    position: absolute;
+    right: -34px;
+}
+/* #whatsapp:hover #drop_whatsapp_number{
+	display: flex;
+} */
+
+/* javascript animation_________________ */
+.etiquette_toggle{
+	transform: translateX(0)!important;
+	transition: .25s linear;
+}
+.drop_whatsapp_number_open{
+	display: flex!important;
+	animation: scale .3s linear;
+}
+.drop_whatsapp_number_open span{
+	animation: spanShow .3s .4s linear forwards;
+}
+.drop_whatsapp_number_open i{
+	animation: spanShow .3s .8s linear forwards;
+}
+.active{
+	transition: .2s ease-in-out!important;
+}
+@keyframes scale{
+	0%{opacity: 0; width: 0px;}
+	100%{opacity: 1;}
+}
+@keyframes spanShow{
+	0%{opacity: 0; font-size: 0px;}
+	100%{opacity: 1;}
+}
+/* .active:hover{
+	background-color: rgba(65, 125, 255, 0.774)!important;
+} */
+
+/* end javascrit animation_________________ */
+
+
+@media screen and (max-width: 800px){
+	#social_icon{
+		transform: translateX(60px);
+		top: 30%;
+	}
+	#etiquette::before{
+		content: ">";
+		background-color:  #2196f3;
+		/* border-top: 10px solid transparent; */
+		/* border-right: 15px solid transparent; */
+		/* border-bottom: 10px solid transparent; */
+		/* border-left: 20px solid var(--primary); */
+		position: absolute;
+		left: -25px;
+		z-index: 22;
+		height: 25%;
+		width: 25px;
+		border-radius: 5px 0 0 5px;
+		color: rgba(255, 255, 255, 0.856);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+@media screen and (max-width: 300px){
+	#drop_whatsapp_number{
+		width: 160px;
+	}
+	#drop_whatsapp_number span{
+		font-size: 12px;
+		position: absolute;
+		top: 11px;
+		right: -15px;
+	}
+	#drop_whatsapp_number i{
+		font-size: 12px;
+		transform: translate(20px, -4px);
+	}
+}

@@ -1,0 +1,59 @@
+@import "color.css";
+
+.content_bulle{
+    position: fixed;
+    bottom: 30;
+    right: 5;
+    z-index: 100;
+}
+#bulle{
+    background-color: #2196f3;
+    position: relative;
+    color: white;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 50%;
+    padding: 10px;
+    margin-left: 10px;
+    max-width: 55vh;
+}
+.bulleHover{
+    display: grid;
+    grid-template: auto auto / auto auto;
+    grid-gap: 30px;
+    background-color: #2196f3;
+    position: relative;
+    color: white;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 10px!important;
+    height: fit-content;
+    animation: showBull .4s ease-in-out;
+}
+@keyframes showBull{
+    0%{opacity: 0; display: none;}
+    100%{opacity: 1; display: block;}
+}
+#boxMsg{
+    display: none;
+    grid-row: span 2;
+}
+#bulle i{
+    font-size: 28px;
+    color: white;
+    grid-row-start: 2;
+    grid-column-start: 2;
+}
+
+
+@media screen and (max-width: 700px){
+
+}
+@media screen and (max-width: 500px){
+    .content_bulle {
+        bottom: 65px;
+    }
+}
+@media screen and (max-width: 350px){
+
+}

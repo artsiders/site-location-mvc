@@ -1,0 +1,81 @@
+#checkStatue1{
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+}
+#checkStatue1 .tile{
+    height: 100px;
+    width: 26%;
+    position: relative;
+}
+#checkStatue1 img{
+    width: 40px;
+    opacity: 0.8;
+}
+#checkStatue1 input[type="checkbox"]{
+    -webkit-appearance: none;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: var(--white3);
+    border-radius: 10px;
+    cursor: pointer;
+    border: 3px solid transparent;
+    outline: none;
+    box-shadow: 15px 15px 25px rgba(2,28,53,0.05);
+}
+#checkStatue1 input[type="checkbox"]:after{
+    position: absolute;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
+    content: "\f111";
+    font-size: 22px;
+    top: 4px;
+    left: 5px;
+    color: #e2e6f3;
+}
+#checkStatue1 input[type="checkbox"]:hover{
+    transform: scale(1.08);
+}
+#checkStatue1 input[type="checkbox"]:checked{
+    border: 3px solid #478bfb;
+}
+#checkStatue1 input[type="checkbox"]:checked:after{
+    font-weight: 900;
+    content: "\f058";
+    color: #478bfb;
+}
+#checkStatue1 label{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    cursor: pointer;
+}
+#checkStatue1 label .fas{
+    font-size: 60px;
+    color: #2c2c51;
+}
+#checkStatue1 input[type="checkbox"]:checked + label .fas{
+    animation: grow 0.5s;
+}
+@keyframes grow{
+    50%{
+        font-size: 80px;
+    }
+}
+#checkStatue1 label h6{
+    font-family: "Poppins",sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #7b7b93;
+}
